@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+#  TanoBot Odds — fichiers à ne jamais publier
+# ---------------------------------------------------------------------------
+#  Contrôle avant tout envoi sur GitHub :
+#      git status --short          (rien de sensible ne doit apparaître)
+#      git check-ignore -v .env    (doit confirmer que .env est ignoré)
+# ---------------------------------------------------------------------------
+
+# Secrets — la règle la plus importante du dépôt
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# Données locales
+data/
+*.db
+*.sqlite3
+*.log
+logs/
+
+# Environnements Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Éditeurs et systèmes
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Journaux et exports temporaires
+*.tmp
+*.bak

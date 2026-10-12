@@ -1,0 +1,24 @@
+# TanoBot Odds — dépendances
+#
+# Volontairement court : le bot ne fait qu'écouter Telegram, appeler le moteur
+# d'analyse et écrire dans une base. Chaque dépendance ajoutée est une surface
+# de plus à surveiller.
+
+# Framework du bot (asynchrone natif : le scan et l'écoute Telegram tournent
+# sans se bloquer l'un l'autre).
+aiogram>=3.13,<4
+
+# Client Supabase (facultatif : sans clés, le bot utilise SQLite en local).
+supabase>=2.9
+
+# Scan automatique quotidien.
+APScheduler>=3.10,<4
+
+# Lecture du fichier .env.
+python-dotenv>=1.0
+
+# --- dépendances du moteur d'analyse -------------------------------------
+# Le moteur (TanoTech Basket Analytics) fournit les calculs. Il n'utilise que
+# la bibliothèque standard ; ces deux paquets ne servent qu'à l'exécuter.
+# Flask est requis par certains modules du moteur importés au chargement.
+Flask>=3.0
